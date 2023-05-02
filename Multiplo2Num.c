@@ -53,7 +53,7 @@ char* ingresarNum(char *k)
         printf("valor invalido \n");
         return 0;
     }
-    k[strlen(num)];
+    k=(char*)malloc(strlen(num)*sizeof(char));
     for (int i=0;i<strlen(num);i++)
         k[i]=num[i];
     call+=1;
@@ -62,23 +62,23 @@ char* ingresarNum(char *k)
 int main()
 {
     char *k;
-    if (ingresarNum(k)==0)
+    char *num1=ingresarNum(k);
+    if (num1==0)
     {
         return 0;
     }else{
-        k=transString(ingresarNum(k));
+        k=transString(num1);
     }
     int numeroteete=atoi(k);
-    printf("%d",numeroteete);
     char *j;
-    if (ingresarNum(j)==0)
+    char *num2=ingresarNum(j);
+    if (num2==0)
     {
         return 0;
     }else{
-        j=transString(ingresarNum(j));
+        j=transString(num2);
     }
     int numeroteete2=atoi(j);
-printf("%d",numeroteete2);
     int mayor=0;
     int menor=0;
     if (numeroteete>numeroteete2)
@@ -89,7 +89,7 @@ printf("%d",numeroteete2);
         mayor=numeroteete2;
         menor=numeroteete;
     }
-    mayor/menor==0?printf("a no es multiplo de b"):printf("a es multiplo de b");
+    mayor%menor!=0?printf("a no es multiplo de b"):printf("a es multiplo de b");
 
 }
 
